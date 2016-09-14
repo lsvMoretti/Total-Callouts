@@ -47,8 +47,8 @@ namespace Total_Callouts
         }
          private static void RegisterCallouts()
         {
-            Functions.RegisterCallout(typeof(Callouts.PursuitinProgress));
-            Functions.RegisterCallout(typeof(Callouts.StolenVehicle));
+            Functions.RegisterCallout(typeof(Callouts.PursuitinProgress)); //Credit to Toast
+            Functions.RegisterCallout(typeof(Callouts.StolenVehicle)); //Credit to Albo1125
             Functions.RegisterCallout(typeof(Callouts.KnifeAttack));
         }
     }
