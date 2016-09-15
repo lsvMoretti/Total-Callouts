@@ -19,6 +19,8 @@ namespace Total_Callouts.Callouts
         private LHandle Pursuit;
         private bool PursuitCreated = false;
 
+        public FiringPattern FullAutomatic { get; private set; }
+
         public override bool OnBeforeCalloutDisplayed()
         {
             SpawnPoint = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(250f));
@@ -50,6 +52,10 @@ namespace Total_Callouts.Callouts
         }
         public override void Process()
         {
+            if (!PursuitCreated && Game.LocalPlayer.Character.Position.DistanceTo(SpawnPoint) <= 50f)
+            {
+                Suspect.Tasks.FireWeaponAt(Victim, -1, FullAutomatic);
+            }
             if (!PursuitCreated && Game.LocalPlayer.Character.Position.DistanceTo(SpawnPoint) <= 10f)
             {
                 Suspect.Tasks.ReactAndFlee(Victim);
