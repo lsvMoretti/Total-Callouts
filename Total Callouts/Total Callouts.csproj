@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Arrest Manager">
+      <HintPath>..\..\..\..\GTA V Plugin Development\References\DLLs\Arrest Manager.dll</HintPath>
+    </Reference>
     <Reference Include="LSPD First Response">
       <HintPath>..\..\..\..\GTA V Plugin Development\References\DLLs\LSPD First Response.dll</HintPath>
     </Reference>
@@ -50,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Callouts\KnifeAttack.cs" />
+    <Compile Include="Callouts\MVA.cs" />
     <Compile Include="Callouts\PursuitinProgress.cs" />
     <Compile Include="Callouts\StolenVehicle.cs" />
     <Compile Include="Main.cs" />

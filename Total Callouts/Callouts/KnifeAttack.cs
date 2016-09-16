@@ -9,6 +9,8 @@ using LSPD_First_Response.Engine.Scripting.Entities;
 
 namespace Total_Callouts.Callouts
 {
+    [CalloutInfo("KnifeAttack", CalloutProbability.VeryHigh)]
+
     public class KnifeAttack : Callout
     {
         private Ped Suspect;
@@ -18,6 +20,7 @@ namespace Total_Callouts.Callouts
         private Blip SuspectBlip;
         private LHandle Pursuit;
         private bool PursuitCreated = false;
+        private bool Notified = false;
 
         public FiringPattern FullAutomatic { get; private set; }
 
@@ -64,9 +67,10 @@ namespace Total_Callouts.Callouts
                 Functions.SetPursuitIsActiveForPlayer(Pursuit, true);
                 PursuitCreated = true;
             }
-            if (PursuitCreated && !Functions.IsPursuitStillRunning(Pursuit))
+            if (PursuitCreated && !Functions.IsPursuitStillRunning(Pursuit) && Notified == false)
             {
                 Game.DisplaySubtitle("Check the ~r~victim~w~.", 7500);
+                Notified = true;
                 if (Game.LocalPlayer.Character.Position.DistanceTo(VictimPoint) <= 10f)
                 {
                     Game.DisplayNotification("Press End to finish the callout");
