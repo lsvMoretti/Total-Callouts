@@ -35,14 +35,21 @@
     <Reference Include="Arrest Manager">
       <HintPath>..\..\..\..\GTA V Plugin Development\References\DLLs\Arrest Manager.dll</HintPath>
     </Reference>
+    <Reference Include="BetterEMS">
+      <HintPath>..\..\..\..\GTA V Plugin Development\References\DLLs\BetterEMS.dll</HintPath>
+    </Reference>
     <Reference Include="LSPD First Response">
       <HintPath>..\..\..\..\GTA V Plugin Development\References\DLLs\LSPD First Response.dll</HintPath>
+    </Reference>
+    <Reference Include="LSPDFR+">
+      <HintPath>..\..\..\..\GTA V Plugin Development\References\DLLs\LSPDFR+.dll</HintPath>
     </Reference>
     <Reference Include="RagePluginHookSDK">
       <HintPath>..\..\..\..\GTA V Plugin Development\References\DLLs\RagePluginHookSDK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Callouts\KnifeAttack.cs" />
+    <Compile Include="Callouts\MissingPerson.cs" />
     <Compile Include="Callouts\MVA.cs" />
     <Compile Include="Callouts\PursuitinProgress.cs" />
     <Compile Include="Callouts\StolenVehicle.cs" />
